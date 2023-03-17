@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (!validSapId()|!validPassword()) {
-                    Toast.makeText(LoginActivity.this, "Successfully login ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Please enter SAP Id and Password", Toast.LENGTH_SHORT).show();
 
 
                 } else {
@@ -82,18 +82,18 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void checkuser () {
-        String userUsername = loginsapid.getText().toString().trim();
+        String userSAPId = loginsapid.getText().toString().trim();
         String userPassword = loginpassword.getText().toString().trim();
 
-        DatabaseReference reference= FirebaseDatabase.getInstance().getReference("user");
-        Query checkUserDatabase = reference.orderByChild("Sap id").equalTo(userUsername);
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
+        Query checkUserDatabase = reference.orderByChild("Sap id").equalTo(userSAPId);
 
         checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
                     loginsapid.setError(null);
-                    String passwordFromDb = snapshot.child(userUsername).child("password").getValue(String.class);
+                    String passwordFromDb = snapshot.child(userSAPId).child("password").getValue(String.class);
 
                     if(!Objects.equals(passwordFromDb,userPassword)){
                         loginsapid.setError(null);
