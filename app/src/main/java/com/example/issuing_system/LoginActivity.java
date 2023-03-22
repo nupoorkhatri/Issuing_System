@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     Button loginbutton;
     TextView signupredirect;
 
+    DatabaseReference reference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://issuing-system1-default-rtdb.firebaseio.com/");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,12 +39,36 @@ public class LoginActivity extends AppCompatActivity {
         loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String userSAPId = loginsapid.getText().toString();
+                String userPassword = loginpassword.getText().toString();
                 if (!validSapId()|!validPassword()) {
                     Toast.makeText(LoginActivity.this, "Please enter SAP Id and Password", Toast.LENGTH_SHORT).show();
 
 
                 } else {
-                    checkuser();
+//                    checkuser();
+                    reference.child("user").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if(snapshot.hasChild(userSAPId)){
+                                String getPassword = snapshot.child(userSAPId).child("password").getValue(String.class);
+                                if (getPassword.equals(userPassword)){
+                                    Toast.makeText(LoginActivity.this, "Successfully Login", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(LoginActivity.this,DashBoard.class);
+                                    startActivity(intent);
+                                }
+                                else {
+                                    Toast.makeText(LoginActivity.this, "Wrong Password", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
                 }
 
             }
@@ -81,41 +106,41 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public void checkuser () {
-        String userSAPId = loginsapid.getText().toString().trim();
-        String userPassword = loginpassword.getText().toString().trim();
-
-        DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
-        Query checkUserDatabase = reference.orderByChild("Sap id").equalTo(userSAPId);
-
-        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
-                    loginsapid.setError(null);
-                    String passwordFromDb = snapshot.child(userSAPId).child("password").getValue(String.class);
-
-                    if(!Objects.equals(passwordFromDb,userPassword)){
-                        loginsapid.setError(null);
-                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                        startActivity(intent);
-                    }else {
-                        loginpassword.setError("Invalid Creadential");
-                        loginpassword.requestFocus();
-                    }
-                }else {
-                    loginsapid.setError("user does not exist");
-                    loginsapid.requestFocus();
-
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
+//    public void checkuser () {
+//        String userSAPId = loginsapid.getText().toString().trim();
+//        String userPassword = loginpassword.getText().toString().trim();
+//
+//        DatabaseReference reference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://issuing-system1-default-rtdb.firebaseio.com/");
+//        Query checkUserDatabase = reference.orderByChild("user").equalTo(userSAPId);
+//
+//        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                if (snapshot.exists()){
+//                    loginsapid.setError(null);
+//                    String passwordFromDb = snapshot.child(userSAPId).child("password").getValue(String.class);
+//
+//                    if(!Objects.equals(passwordFromDb,userPassword)){
+//                        loginsapid.setError(null);
+//                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+//                        startActivity(intent);
+//                    }else {
+//                        loginpassword.setError("Invalid Creadential");
+//                        loginpassword.requestFocus();
+//                    }
+//                }else {
+//                    loginsapid.setError("user does not exist");
+//                    loginsapid.requestFocus();
+//
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+//    }
 
 }
