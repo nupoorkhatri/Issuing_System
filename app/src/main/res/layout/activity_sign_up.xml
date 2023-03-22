@@ -33,49 +33,52 @@
                 android:textSize="36sp"
                 android:textAlignment="center"
                 android:textStyle="bold"
-                android:textColor="@color/purples"/>
+                android:textColor="@color/blue_lc"/>
 
             <EditText
+                android:id="@+id/signupname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/signupname"
-                android:background="@drawable/purple_border"
                 android:layout_margin="10dp"
                 android:layout_marginTop="10dp"
-                android:padding="10dp"
-                android:hint="Name"
+                android:background="@drawable/purple_border"
                 android:drawableLeft="@drawable/ic_baseline_person_24"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:hint="Name"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                android:textColor="@color/black" />
 
             <EditText
+                android:id="@+id/signupsapid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/signupsapid"
-                android:background="@drawable/purple_border"
                 android:layout_margin="10dp"
                 android:layout_marginTop="10dp"
-                android:inputType="number"
-                android:ems="12"
-                android:padding="10dp"
-                android:hint="SAP Id"
+                android:background="@drawable/purple_border"
                 android:drawableLeft="@drawable/ic_baseline_email_24"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:ems="12"
+                android:hint="SAP Id"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                android:textColor="@color/black" />
 
             <EditText
+                android:id="@+id/signuppassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/signuppassword"
-                android:background="@drawable/purple_border"
                 android:layout_margin="10dp"
                 android:layout_marginTop="10dp"
-                android:inputType="numberPassword"
-                android:padding="8dp"
-                android:hint="password"
+                android:background="@drawable/purple_border"
                 android:drawableLeft="@drawable/ic_baseline_lock_24"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:hint="password"
+                android:inputType="numberPassword"
+                android:minHeight="48dp"
+                android:padding="8dp"
+                android:textColor="@color/black" />
 
             <Button
                 android:layout_width="match_parent"
@@ -96,7 +99,7 @@
                 android:padding="8dp"
                 android:layout_marginTop="10dp"
                 android:textSize="18sp"
-                android:textColor="@color/purples" />
+                android:textColor="@color/blue_lc" />
 
         </LinearLayout>
 

@@ -2,6 +2,12 @@
     <string name="app_name">Issuing_System</string>
     <string name="signup">Sign Up</string>
     <string name="login">LogIn</string>
-    <string name="msg1">Already have an account? Login. </string>
-    <string name="msg2">Dont have an account? Sign Up.  </string>
+    <string name="msg1">Already have an account? Login.</string>
+    <string name="msg2">Dont have an account? Sign Up.</string>
+    <string name="c1">CRICKET</string>
+    <string name="c2">FOOTBALL</string>
+    <string name="c3">VOLLEYBALL</string>
+    <string name="c4">BADMINTON</string>
+    <string name="c5">LONG TENNIS</string>
+    <string name="c6">TABLE TENNIS</string>
 </resources>
