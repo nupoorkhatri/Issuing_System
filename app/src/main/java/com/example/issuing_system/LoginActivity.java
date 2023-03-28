@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                                 String getPassword = snapshot.child(userSAPId).child("password").getValue(String.class);
                                 if (getPassword.equals(userPassword)){
                                     Toast.makeText(LoginActivity.this, "Successfully Login", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(LoginActivity.this,DashBoard.class);
+                                    Intent intent = new Intent(LoginActivity.this,Home_Activity.class);
                                     startActivity(intent);
                                 }
                                 else {
