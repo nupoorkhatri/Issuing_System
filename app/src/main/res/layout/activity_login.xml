@@ -22,7 +22,7 @@
             android:orientation="vertical"
             android:layout_gravity="center_horizontal"
             android:padding="24dp"
-            android:background="@drawable/purple_border" >
+            android:background="@drawable/blue_border" >
 
             <TextView
                 android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/purple_border"
+                android:background="@drawable/blue_border"
                 android:drawableLeft="@drawable/ic_baseline_email_24"
                 android:drawablePadding="8dp"
                 android:ems="12"
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/purple_border"
+                android:background="@drawable/blue_border"
                 android:drawableLeft="@drawable/ic_baseline_lock_24"
                 android:drawablePadding="8dp"
                 android:hint="password"
