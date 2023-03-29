@@ -7,7 +7,7 @@
     android:background="@color/blue_lc"
     tools:context=".CricketActivity">
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:id="@+id/relativeLayout">
@@ -52,7 +52,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:id="@+id/r_2"
         android:layout_below="@id/con_one"
