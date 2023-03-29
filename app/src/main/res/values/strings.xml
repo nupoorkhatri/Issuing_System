@@ -12,6 +12,53 @@
     <string name="c6">TABLE TENNIS</string>
     <string name="open_nav">Open Navigation Drawer</string>
     <string name="close_nav">Close Navigation Drawer</string>
+    <string name="confirm">Confirm</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="cricket">
+<!--        <item>Select Equipment</item>-->
+        <item>Bat</item>
+        <item>Tennis Ball</item>
+        <item>Leather Ball</item>
+        <item>Stumps</item>
+        <item>Keeping Gloves</item>
+        <item>Helmet</item>
+    </string-array>
+
+    <string-array name="football">
+<!--        <item>Select Equipment</item>-->
+        <item>FootBall</item>
+        <item>Flags</item>
+        <item>Cones</item>
+    </string-array>
+
+    <string-array name="badminton">
+<!--        <item>Select Equipment</item>-->
+        <item>Racket</item>
+        <item>Shuttlecock</item>
+        <item>Net</item>
+    </string-array>
+
+    <string-array name="table_tennis">
+<!--        <item>Select Equipment</item>-->
+        <item>Paddle</item>
+        <item>Ball</item>
+        <item>Net</item>
+    </string-array>
+
+    <string-array name="volley_ball">
+<!--        <item>Select Equipment</item>-->
+        <item>Volley Ball</item>
+        <item>Net</item>
+        <item>Score Card</item>
+    </string-array>
+
+    <string-array name="long_tennis">
+<!--        <item>Select Equipment</item>-->
+        <item>Tennis Ball</item>
+        <item>Racket</item>
+        <item>Net</item>
+    </string-array>
+
 </resources>
