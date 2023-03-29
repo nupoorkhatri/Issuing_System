@@ -13,6 +13,11 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 public class CricketActivity extends AppCompatActivity {
 
     ImageView backb;
@@ -54,6 +59,8 @@ public class CricketActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(CricketActivity.this,Issued_Receipt.class);
                 startActivity(intent);
+
+
 
             }
         });
