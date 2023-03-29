@@ -108,7 +108,8 @@
             android:text="@string/confirm"
             android:background="@color/blue_lc"
             android:textColor="@color/white"
-            android:textSize="18dp"/>
+            android:textSize="18dp"
+            android:id="@+id/button1"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
