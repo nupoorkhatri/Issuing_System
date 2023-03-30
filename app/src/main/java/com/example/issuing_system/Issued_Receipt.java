@@ -14,7 +14,7 @@ import java.util.Locale;
 
 public class Issued_Receipt extends AppCompatActivity {
 
-    TextView t1,t2,t3,t4,t5,t7,t8,t9,t10,t11;
+    TextView t2,t3,t4,t5,t8,t9,t10,t11;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -22,12 +22,11 @@ public class Issued_Receipt extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_issued_receipt);
 
-        t1 = findViewById(R.id.textView3);
+
         t2 = findViewById(R.id.textView4);
         t3 = findViewById(R.id.textView5);
         t4 = findViewById(R.id.textView6);
         t5 = findViewById(R.id.textView7);
-        t7 = findViewById(R.id.textView9);
         t8 = findViewById(R.id.textView10);
         t9 = findViewById(R.id.textView11);
         t10 = findViewById(R.id.textView12);
