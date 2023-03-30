@@ -26,7 +26,7 @@ public class CricketActivity extends AppCompatActivity {
     String s1;
     Spinner sp;
 
-    TextView value,sname;
+    TextView value,sname,stext;
 
     Button confirm;
     int count = 0;
@@ -43,6 +43,7 @@ public class CricketActivity extends AppCompatActivity {
         sname = findViewById(R.id.sname);
         sp = findViewById(R.id.spinner);
         confirm = findViewById(R.id.button1);
+        stext = findViewById(R.id.textView8);
 
         backb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +59,7 @@ public class CricketActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 s1=parent.getItemAtPosition(position).toString();
+                stext.setText(s1);
             }
 
             @Override
@@ -73,7 +75,14 @@ public class CricketActivity extends AppCompatActivity {
                 }
                 else  {
                     enterTheData ();
+
+                    String category = sname.getText().toString();
+                    String quantity = value.getText().toString();
+                    String equipment = stext.getText().toString();
                     Intent intent = new Intent(CricketActivity.this,Issued_Receipt.class);
+                    intent.putExtra("keyname",category);
+                    intent.putExtra("keyquantity",quantity);
+                    intent.putExtra("keyeq",equipment);
                     startActivity(intent);
                 }
 

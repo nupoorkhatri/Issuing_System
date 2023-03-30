@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,11 +18,13 @@ public class BadmintonActivity extends AppCompatActivity {
 
     ImageView backb;
 
+    String s1;
+
     Spinner sp;
 
     Button confirm;
 
-    TextView value,sname;
+    TextView value,sname,stext;
     int count = 0;
 
 
@@ -36,6 +39,7 @@ public class BadmintonActivity extends AppCompatActivity {
         sname = findViewById(R.id.sname);
         sp = findViewById(R.id.spinner);
         confirm = findViewById(R.id.button1);
+        stext = findViewById(R.id.textView8);
 
         backb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +52,19 @@ public class BadmintonActivity extends AppCompatActivity {
         ArrayAdapter ar = ArrayAdapter.createFromResource(this,R.array.badminton, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         sp.setAdapter(ar);
 
+        sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                s1=parent.getItemAtPosition(position).toString();
+                stext.setText(s1);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +74,13 @@ public class BadmintonActivity extends AppCompatActivity {
                 }
                 else {
 
+                    String category = sname.getText().toString();
+                    String quantity = value.getText().toString();
+                    String equipment = stext.getText().toString();
                     Intent intent = new Intent(BadmintonActivity.this, Issued_Receipt.class);
+                    intent.putExtra("keyname",category);
+                    intent.putExtra("keyquantity",quantity);
+                    intent.putExtra("keyeq",equipment);
                     startActivity(intent);
                 }
 
