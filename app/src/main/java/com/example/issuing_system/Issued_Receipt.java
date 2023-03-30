@@ -21,15 +21,10 @@ public class Issued_Receipt extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_issued_receipt);
-        t1 = findViewById(R.id.textView3);
-        t2 = findViewById(R.id.textView4);
-        t3 = findViewById(R.id.textView5);
-        t4 = findViewById(R.id.textView6);
+
+
         t5 = findViewById(R.id.textView7);
-        t7 = findViewById(R.id.textView9);
-        t8 = findViewById(R.id.textView10);
-        t9 = findViewById(R.id.textView11);
-        t10 = findViewById(R.id.textView12);
+
         t11 = findViewById(R.id.textView13);
 
 
@@ -37,6 +32,7 @@ public class Issued_Receipt extends AppCompatActivity {
         String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
 
         t11.setText(currentDate);
+
 
 
 

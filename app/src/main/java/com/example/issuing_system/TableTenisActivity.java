@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TableTenisActivity extends AppCompatActivity {
 
@@ -51,8 +52,14 @@ public class TableTenisActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(TableTenisActivity.this,Issued_Receipt.class);
-                startActivity(intent);
+                if (count == 0) {
+                    Toast.makeText(TableTenisActivity.this, "Please select the Quantity", Toast.LENGTH_SHORT).show();
+                }
+                else {
+
+                    Intent intent = new Intent(TableTenisActivity.this, Issued_Receipt.class);
+                    startActivity(intent);
+                }
 
             }
         });

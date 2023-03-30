@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FootBallActivity extends AppCompatActivity {
 
@@ -51,8 +52,13 @@ public class FootBallActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(FootBallActivity.this,Issued_Receipt.class);
-                startActivity(intent);
+                if (count == 0) {
+                    Toast.makeText(FootBallActivity.this, "Please select the Quantity", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent intent = new Intent(FootBallActivity.this, Issued_Receipt.class);
+                    startActivity(intent);
+                }
 
             }
         });

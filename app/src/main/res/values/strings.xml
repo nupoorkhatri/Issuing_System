@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Issuing_System</string>
+    <string name="app_name">Sports Port</string>
     <string name="signup">Sign Up</string>
     <string name="login">LogIn</string>
     <string name="msg1">Already have an account? Login.</string>

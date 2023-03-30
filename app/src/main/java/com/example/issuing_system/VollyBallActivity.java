@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class VollyBallActivity extends AppCompatActivity {
 
@@ -50,10 +51,14 @@ public class VollyBallActivity extends AppCompatActivity {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (count == 0) {
+                    Toast.makeText(VollyBallActivity.this, "Please select the Quantity", Toast.LENGTH_SHORT).show();
+                }
+                else {
 
-                Intent intent = new Intent(VollyBallActivity.this,Issued_Receipt.class);
-                startActivity(intent);
-
+                    Intent intent = new Intent(VollyBallActivity.this, Issued_Receipt.class);
+                    startActivity(intent);
+                }
             }
         });
 
